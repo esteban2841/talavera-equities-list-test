@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 export default function CharactersNavigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Characters' component={Characters} />
+      <Stack.Screen name='Characters' component={Characters} options={ {title: "", headerTransparent: true} } />
       <Stack.Screen name='CharactersDetail' component={CharacterDetail} />
     </Stack.Navigator>
   )

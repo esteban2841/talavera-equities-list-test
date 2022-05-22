@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet, YellowBox } from 'react-native'
 import React, { useEffect, useState}  from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { getRickMortyApi } from '../api/rmCharacters'
 import CharactersList from "../components/CharactersList"
+import  {SafeAreaView}  from 'react-native-safe-area-context'
 
 
-export default function Charactes() {
+export default function Characters() {
   const [ characters, setCharacters ] = useState([])
 
   useEffect(()=>{
@@ -23,8 +23,15 @@ export default function Charactes() {
     }
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.mainContainer} >
       <CharactersList characters={characters} />
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  mainContainer:{
+    backgroundColor:"none",
+    marginTop: 20
+  }
+})
