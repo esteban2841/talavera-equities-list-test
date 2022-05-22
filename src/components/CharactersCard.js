@@ -1,6 +1,7 @@
 import { StyleSheet ,View, Text, Image, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import getCharacterColorBySpicie from '../utils/getColorBySpicies'
+import {capitalize} from "lodash"
 
 export default function CharactersCard(props) {
     const {character}=props
@@ -14,7 +15,7 @@ export default function CharactersCard(props) {
       <View style={styles.card} >
           <View style={styles.spacing} >
             <View style={bgStyles} >
-              <Text style={styles.name} >{character.name}</Text>
+              <Text style={styles.name} >{capitalize(character.name)}</Text>
               <Text style={styles.number} >#{`${character.id}`.padStart(3, 0)}</Text>
               <Image 
               source={{ uri : character.image }}

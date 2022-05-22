@@ -7,6 +7,7 @@ import  {SafeAreaView}  from 'react-native-safe-area-context'
 
 export default function Characters() {
   const [ characters, setCharacters ] = useState([])
+  const [ nextUrl, setNextUrl ]= useState(null)
 
   useEffect(()=>{
     (async()=>{
@@ -16,15 +17,16 @@ export default function Characters() {
   
   const loadCharacters = async ()=>{
     try{
-      const response = await getRickMortyApi();
-      setCharacters(response.results)
+      const response = await getRickMortyApi(nextUrl);
+      setNextUrl(response.info.next)
+      setCharacters([...characters, ...response.results])
     } catch (error){
       console.log(error)
     }
   }
   return (
     <SafeAreaView style={styles.mainContainer} >
-      <CharactersList characters={characters} />
+      <CharactersList characters={characters} loadCharacters={loadCharacters} />
     </SafeAreaView>
   )
 }
@@ -32,6 +34,5 @@ export default function Characters() {
 const styles = StyleSheet.create({
   mainContainer:{
     backgroundColor:"none",
-    marginTop: 20
   }
 })
