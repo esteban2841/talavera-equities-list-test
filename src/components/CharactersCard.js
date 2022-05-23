@@ -2,14 +2,19 @@ import { StyleSheet ,View, Text, Image, TouchableWithoutFeedback } from 'react-n
 import React from 'react'
 import getCharacterColorBySpicie from '../utils/getColorBySpicies'
 import {capitalize} from "lodash"
+import { useNavigation } from "@react-navigation/native"
 
 export default function CharactersCard(props) {
+  const navigation = useNavigation()
+
     const {character}=props
     const goToCharacter = ()=>{
-        console.log(`Vamos a Character${character.name}`)
+      navigation.navigate("CharactersDetail", { id : character.id })
     }
+
     const characterColor= getCharacterColorBySpicie(character.species)
     const bgStyles = { backgroundColor: characterColor, ...styles.bgStyles} 
+
   return (
     <TouchableWithoutFeedback onPress={goToCharacter}>
       <View style={styles.card} >

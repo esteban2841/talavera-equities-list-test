@@ -10,3 +10,13 @@ export async function getRickMortyApi(enpointUrl){
         throw error
     }
 }
+
+export async function characterDetailFound (id){
+    const page = Math.ceil(id/20)
+    const response = await fetch("https://rickandmortyapi.com/api/character?page="+page)
+    const result = await response.json()
+    const character= result.results.filter(c => { 
+       return c.id === id 
+    })
+    return character[0]
+}
