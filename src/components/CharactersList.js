@@ -3,29 +3,17 @@ import React from 'react'
 import CharactersCard from '../components/CharactersCard'
 
 export default function CharactersList(props) {
-  const { characters, loadCharacters } = props
-
-  const loadMore = ()=>{
-    loadCharacters()
-  }
-
+  const { characters } = props
+	console.log("TCL: CharactersList -> characters", characters)
   return (
     <FlatList
       data={characters}
-      numColumns={2}
+      numColumns={1}
       showsHorizontalScrollIndicator={false}
-      keyExtractor={(characters)=>String(characters.id)}
-      renderItem={({item})=> <CharactersCard character={item} />}
+      keyExtractor={(characters)=>String(characters.name)}
+      renderItem={({item, index})=> <CharactersCard character={item} ind={index} />}
       contentContainerStyle={styles.flatListContentContainer}
-      onEndReached={loadMore}
-      onEndReachedThreshold={0.1}
-      ListFooterComponent={
-        <ActivityIndicator
-        size="large"
-        style={styles.spinner}
-        color="#AEAEAE"
-        />
-      }
+     
     />
   )
 }
@@ -34,9 +22,5 @@ const styles = StyleSheet.create({
   flatListContentContainer:{
     paddingHorizontal:5,
   },
-  spinner:{
-    marginTop:20,
-    margintBottom:60,
 
-  }
 })

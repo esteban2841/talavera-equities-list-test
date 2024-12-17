@@ -1,38 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
-import FavoriteNavigation from './FavoriteNavigation';
+import { createStackNavigator } from '@react-navigation/stack';
 import CharactersNavigation from './CharactersNavigation';
-import AccountNavigation from './AccountNavigation';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Image} from "react-native"
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function Navigation() {
+	console.log("TCL: Navigation -> Navigation")
   return (
-    <Tab.Navigator>
-      <Tab.Screen name='Favorite' component={FavoriteNavigation}
-      options={{
-        tabBarLabel:"My favorites",
-        tabBarIcon: ({color, size})=> <Icon name="heart" color={color} size={size}/>
-        
-
-      }}
-      />
-      <Tab.Screen name='Characters' component={CharactersNavigation} 
-      options={{
-        tabBarLabel:"",
-        tabBarIcon: ()=> renderLogo(),
-      }}
-      />
-      <Tab.Screen name='Account' component={AccountNavigation}
-      options={{
-        tabBarLabel:"My Account",
-        tabBarIcon: ({color, size})=> <Icon name="user" color={color} size={size}/>
-      }}
-      />
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name='Characters' component={CharactersNavigation} />
+    </Stack.Navigator>
   )
 }
 

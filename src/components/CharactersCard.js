@@ -7,13 +7,12 @@ import { useNavigation } from "@react-navigation/native"
 export default function CharactersCard(props) {
   const navigation = useNavigation()
 
-    const {character}=props
+    const {character, ind}=props
     const goToCharacter = ()=>{
-      navigation.navigate("CharactersDetail", { id : character.id })
+      navigation.navigate("CharactersDetail", { id : ind })
     }
 
-    const characterColor= getCharacterColorBySpicie(character.species)
-    const bgStyles = { backgroundColor: characterColor, ...styles.bgStyles} 
+    const bgStyles = { ...styles.bgStyles} 
 
   return (
     <TouchableWithoutFeedback onPress={goToCharacter}>
@@ -21,11 +20,7 @@ export default function CharactersCard(props) {
           <View style={styles.spacing} >
             <View style={bgStyles} >
               <Text style={styles.name} >{capitalize(character.name)}</Text>
-              <Text style={styles.number} >#{`${character.id}`.padStart(3, 0)}</Text>
-              <Image 
-              source={{ uri : character.image }}
-              style={styles.image}
-              />
+              <Text style={styles.number} >#{`${ind}`.padStart(3, 0)}</Text>
             </View>
 
           </View>
