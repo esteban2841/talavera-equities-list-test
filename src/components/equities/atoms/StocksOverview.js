@@ -35,7 +35,7 @@ export default StocksOverview
 
 const styles = StyleSheet.create({
   mainContainer:{
-    flex: 2,
+    flex: 1,
     boxSize: "border-box",
     paddingHorizontal: 50,
     paddingVertical: 20,

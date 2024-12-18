@@ -20,7 +20,7 @@ export default function EquitiesList(props) {
 
 const styles = StyleSheet.create({
   flatListContentContainer:{
-    flex : 1,
+    flex : 2,
     paddingHorizontal: 10,
     paddingVertical: 10,
     backgroundColor: 'rgb(47, 47, 47)',
