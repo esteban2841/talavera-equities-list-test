@@ -4,6 +4,4 @@ export interface Equity {
     price: number;
     daily_change: number;
 }
-export interface Equities {
-    equities: Equity[];
-}
+export type Equities = Equity[];
