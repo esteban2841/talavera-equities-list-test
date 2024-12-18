@@ -9,11 +9,12 @@ const StocksOverview = ({equities}) => {
   return (
     <View style={styles.mainContainer} >
       <View style={styles.hotStockContainer} >
-        <Text style={styles.stockTitle} >Hot Stock of the day</Text>
+        <Text style={styles.stockTitle} >Daily Hot Stock</Text>
         <View style={styles.spacing} >
 
           <View style={styles.stockContainerHeader} >
             <Text style={styles.stockContainerHeaderItem}>{symbol}</Text>
+            <Text style={styles.stockIncrementSymbol}>+</Text>
             <Text style={styles.stockContainerHeaderItem}>{daily_change}</Text>
           </View>
         </View>
@@ -49,6 +50,9 @@ const styles = StyleSheet.create({
   stockTitle:{
     color: "white",
     fontSize: 16,
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: '400',
+    fontStyle: 'normal',
   },
   stockContainerHeader:{
     display: "flex",
@@ -61,6 +65,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginRight: 10,
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: '400',
+    fontStyle: 'normal',
+  },
+  stockIncrementSymbol:{
+    color: 'rgb(0, 153, 117)',
+    fontSize: 18,
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: '400',
+    fontStyle: 'normal',
+    fontWeight: "bold",
+    marginRight: 4,
   },
   stockContainerFooterItem:{
     color: 'rgb(255, 255, 255)',
@@ -68,6 +84,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginRight: 10,
     paddingTop: 20,
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: '400',
+    fontStyle: 'normal',
   },
   spacing:{
     flex: 1,
