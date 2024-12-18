@@ -1,6 +1,5 @@
 import { StyleSheet ,View, Text, Image, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
-import getCharacterColorBySpicie from '../../../utils/getColorBySpicies'
 import {capitalize} from "lodash"
 import { useNavigation } from "@react-navigation/native"
 
