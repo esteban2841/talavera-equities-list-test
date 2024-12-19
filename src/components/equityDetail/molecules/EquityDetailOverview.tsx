@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 // import {EquityChangeChart} from '../atoms/EquityChangeChart';
 import { EquitiesContext } from '../../../context/equities/EquitiesContext';
 import IconRendering from '../atoms/IconRendering';
-import { CustomText } from '../../equities/atoms/CustomText';
+import { CustomText } from '../../equitiesList/atoms/CustomText';
 
 const EquityDetailOverview = () => {
 

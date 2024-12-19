@@ -3,13 +3,11 @@ import EquitiesNavigation from './EquitiesNavigation';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import Entypo from '@expo/vector-icons/Entypo';
 // import Home from '../Screens/Home';
-import { EquitiesProvider } from '../context';
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <EquitiesProvider>
 
       <Tab.Navigator
         screenOptions={
@@ -33,6 +31,5 @@ export default function Navigation() {
           }}
         />
       </Tab.Navigator>
-    </EquitiesProvider>
   )
 }
