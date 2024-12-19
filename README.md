@@ -50,13 +50,6 @@ Refactor code constantly ( you would see commits on the git branch history with 
 
 In order to have a better approach for any developer on components re-utilization I implemented typescript, this would infer meanwhile development processes to make the develop curve faster
 
-
-│   ├── Navigation/
-│   │   ├── (EquitiesNavigation) // equities tree
-│   │   ├── (Navigation) //core tree
-
-
-
 2- UI implementation, routing system using tabs
 
 On mobile applications is easier to emulate OS routing as android having tab bottom tabs is easier to adapt to the application flow so In this app was implemented in that way, also having buttons making contrast from other ui html tags, the equities list was rendered in a scrollable tag to have that part of the aplication scrolling and the tab is always visible and accesible as well as other features.
