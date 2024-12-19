@@ -11,62 +11,25 @@ interface IconRenderingProps {
   style: any
 }
 
+const icons: { [key in 'FB' | 'AAPL' | 'MSFT' | 'GOOGL' | 'AMZN' | 'TSLA']: JSX.Element } = {
+    FB: <FontAwesome6 name="meta" size={68} color="'rgb(220,12,6)'" />,
+    AAPL: <AntDesign name="apple1" size={68} color="'rgb(220,12,6)'" />,
+    MSFT: <FontAwesome5 name="microsoft" size={68} color="'rgb(220,12,6)'" />,
+    GOOGL: <AntDesign name="google" size={68} color="'rgb(220,12,6)'" />,
+    AMZN: <AntDesign name="amazon" size={68} color="'rgb(220,12,6)'" />,
+    TSLA: <Fontisto name="tesla" size={68} color="'rgb(220,12,6)'" />
+}
+
 const IconRendering = ({equitySelected, style} : IconRenderingProps) => {
-console.log("TCL: IconRendering -> equitySelected", equitySelected)
 
-    if(equitySelected?.symbol === 'FB'){
-        return (
-          <View style={style}>
-            <FontAwesome6 name="meta" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
+  return (
+    <View style={style}>
+      {
+        equitySelected?.symbol && icons[equitySelected.symbol as 'FB' | 'AAPL' | 'MSFT' | 'GOOGL' | 'AMZN' | 'TSLA'] ? icons[equitySelected.symbol as 'FB' | 'AAPL' | 'MSFT' | 'GOOGL' | 'AMZN' | 'TSLA'] : <></>
+      }
+    </View>
+  )
 
-    }
-    if(equitySelected?.symbol === 'AAPL'){
-        return (
-          <View style={style}>
-            <AntDesign name="apple1" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
-
-    }
-    if(equitySelected?.symbol === 'MSFT'){
-        return (
-          <View   style={style}>
-            <FontAwesome5 name="microsoft" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
-
-    }
-    if(equitySelected?.symbol === 'GOOGL'){
-        return (
-          <View style={style}>
-            <AntDesign name="google" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
-
-    }
-    if(equitySelected?.symbol === 'AMZN'){
-        return (
-          <View   style={style}>
-            <AntDesign name="amazon" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
-
-    }
-    if(equitySelected?.symbol === 'TSLA'){
-        return (
-          <View style={style}>
-            <Fontisto name="tesla" size={68} color="'rgb(220,12,6)'" />
-          </View>
-        )
-
-    }
-
-    return (
-        <>
-        </>
-    )
 }
 
 export default IconRendering
