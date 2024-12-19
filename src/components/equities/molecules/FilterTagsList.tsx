@@ -5,17 +5,16 @@ import { FilterList, FilterTag } from "../../../types/equities";
 
 export interface FilterTagListProps {
   filterList: FilterTag[];
-  stateModifierCb: (state: any) => void;
 }
 
-const FilterTagsList = ({filterList, stateModifierCb}: FilterTagListProps) => {
+const FilterTagsList = ({filterList}: FilterTagListProps) => {
   return (
    <FlatList
       data={filterList}
       numColumns={1}
       showsHorizontalScrollIndicator={false}
       keyExtractor={(filter, index) => index.toString()}
-      renderItem={({item})=> <FilterEquitiesButton stateModifierCb={stateModifierCb} type={item.type} content={item.content} />}
+      renderItem={({item})=> <FilterEquitiesButton type={item.type} content={item.content} />}
       contentContainerStyle={styles.container}
     
     />

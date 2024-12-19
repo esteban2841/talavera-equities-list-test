@@ -20,20 +20,21 @@ export const EquitiesProvider = ({children}: Props) => {
 
     const [state, dispatch] = useReducer(EquitiesReducer, INITIAL_STATE)
     
-    const sortEquities = async (payload: Equity[]) =>{
-        const sortedEquities = sorting([...payload])
-        dispatch({type:'sortEquities', payload: sortedEquities})
+    const sortEquitiesAsc = (payload: Equity[]) =>{
+		console.log("TCL: sortEquitiesAsc -> payload", payload)
+        const sortedEquities = sorting([...payload], 'name')
+		console.log("TCL: sortEquitiesAsc -> sortedEquities", sortedEquities)
+        dispatch({type:'sortEquitiesAsc', payload: sortedEquities})
     }
 
 
     return (
         <EquitiesContext.Provider value={{
             ...state,
-            sortEquities
+            sortEquitiesAsc
         }}>
             {children}
         </EquitiesContext.Provider>
     )
 }
 
-export const useEquitiesProvider = useContext(EquitiesContext)

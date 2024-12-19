@@ -1,19 +1,22 @@
 import { Platform, StatusBar, StyleSheet } from 'react-native'
-import React, { useEffect, useState}  from 'react'
+import React, { useContext, useEffect, useRef, useState}  from 'react'
 import EquitiesTable from "../components/equities/molecules/EquitiesTable"
 import  {SafeAreaView}  from 'react-native-safe-area-context'
 import StocksOverview from '../components/equities/atoms/StocksOverview'
-import DATAJSON from '../../dummy_stock_data.json'
-
-const {stocks} = DATAJSON
+import { EquitiesContext } from '../context'
 
 export default function EquitiesListOverview() {
-  const [ equities, setEquities ] = useState([...stocks])
+  const {equities, filteredEquities} = useContext(EquitiesContext)
+  const equitiesRef = useRef(null)
+
+  useEffect(() => {
+    equitiesRef.current = filteredEquities.length ? filteredEquities : equities
+  }, [equities, filteredEquities])
 
   return (
     <SafeAreaView class='equities-list' style={styles.mainContainer} >
-      <StocksOverview equities={equities}/>
-      <EquitiesTable equities={equities} stateModifierCb={setEquities} />
+      <StocksOverview equities={filteredEquities.length ? equitiesRef.current : equities}/>
+      <EquitiesTable equities={filteredEquities.length ? equitiesRef.current : equities} />
     </SafeAreaView>
   )
 }

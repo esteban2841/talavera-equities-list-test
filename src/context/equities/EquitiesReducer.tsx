@@ -2,7 +2,7 @@ import { EquitiesContext } from './EquitiesContext';
 
 export const EquitiesReducer = (state: EquitiesContext, action: any) : EquitiesContext => {
     switch (action.type) {
-        case 'sortEquities':
+        case 'sortEquitiesAsc':
             return {
                 ...state,
                 filteredEquities: action.payload

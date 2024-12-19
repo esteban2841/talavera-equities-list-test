@@ -1,8 +1,7 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { CustomText } from './CustomText';
-import React from 'react';
-import { sorting } from '../../../utils/equities';
-
+import React, { useContext } from 'react';
+import { EquitiesContext } from '../../../context/equities/EquitiesContext';
 export interface FilterEquitiesButtonProps {
   type: 'primary' | 'secondary';
   content: string;
@@ -13,23 +12,11 @@ export interface FilterEquitiesButtonProps {
 export function FilterEquitiesButton({
   type = 'primary',
   content,
-  stateModifierCb,
   ...rest
 }: FilterEquitiesButtonProps) {
-	console.log("TCL: stateModifierCb", stateModifierCb)
+
+  const {sortEquitiesAsc, equities} = useContext(EquitiesContext)
   const bgColor = rest.bgColor || 'rgb(220,12,6)';
-
-  const actions = (action: string)=>{
-		console.log("TCL: actions -> action", action)
-    if(action === 'Sort'){
-      stateModifierCb((state: any) => {
-        return sorting(state)
-      })
-    }
-    else if(action === 'Filter by'){
-    }
-
-  }
 
   return (
     <TouchableOpacity
@@ -38,7 +25,7 @@ export function FilterEquitiesButton({
         ...(type === 'primary' ? [styles.primary] : []),
       ]}
       {...rest}
-      onPress={()=>actions(content)}
+      onPress={()=>sortEquitiesAsc(equities)}
     >
       <CustomText type='default'>{content}</CustomText>
     </TouchableOpacity>

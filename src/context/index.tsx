@@ -1,2 +1,2 @@
-export { EquitiesContext } from './inventory/EquitiesContext'
-export { EquitiesProvider, useEquitiesProvider } from './inventory/EquitiesProvider'
+export { EquitiesContext } from './equities/EquitiesContext'
+export { EquitiesProvider } from './equities/EquitiesProvider'

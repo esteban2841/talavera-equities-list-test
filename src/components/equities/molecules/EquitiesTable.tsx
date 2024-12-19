@@ -17,13 +17,12 @@ const filters : FilterList = [
 
 export interface EquitiesTableProps {
   equities: Equity[];
-  stateModifierCb: (state: any) => void;
 }
 
-export default function EquitiesTable({equities, stateModifierCb}: EquitiesTableProps) {
+export default function EquitiesTable({equities}: EquitiesTableProps) {
   return (
     <View style={styles.mainContainer}>
-      <FilterTagsList filterList={filters} stateModifierCb={stateModifierCb} />
+      <FilterTagsList filterList={filters} />
       <EquitiesList equities={equities} />
     </View>
   )
