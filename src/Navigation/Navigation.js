@@ -2,7 +2,7 @@ import React from 'react'
 import EquitiesNavigation from './EquitiesNavigation';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import Entypo from '@expo/vector-icons/Entypo';
-import Home from '../Screens/Home';
+// import Home from '../Screens/Home';
 import { EquitiesProvider } from '../context';
 
 const Tab = createBottomTabNavigator();

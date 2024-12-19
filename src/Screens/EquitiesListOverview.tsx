@@ -3,7 +3,6 @@ import React  from 'react'
 import EquitiesTable from "../components/equities/molecules/EquitiesTable"
 import  {SafeAreaView}  from 'react-native-safe-area-context'
 import StocksOverview from '../components/equities/atoms/StocksOverview'
-import { EquitiesContext } from '../context'
 
 export default function EquitiesListOverview() {
 

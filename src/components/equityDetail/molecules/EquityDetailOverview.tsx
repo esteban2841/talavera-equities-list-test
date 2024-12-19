@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import {EquityChangeChart} from '../atoms/EquityChangeChart';
+import { View, StyleSheet } from 'react-native';
+// import {EquityChangeChart} from '../atoms/EquityChangeChart';
 import { EquitiesContext } from '../../../context/equities/EquitiesContext';
 import IconRendering from '../atoms/IconRendering';
 import { CustomText } from '../../equities/atoms/CustomText';
