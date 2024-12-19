@@ -58,6 +58,8 @@ TO DO as personal challenge:
 
 I really wanted to highlight from other participants implementing a 3d Money GLB file using react drei and React three fiber but time run, in expo was leading to errors from some dependency yet not identified but I'm going to fix it for sure since I realized today, A pity due to the time I spent, The glb is in assets and I took one model from sketchfab.com and modified using blender and erasing some geometries and made the react component atom.
 
+Add loaders to have better user experience
+
 
 3 - React native good practices
 
