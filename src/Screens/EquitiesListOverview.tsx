@@ -8,7 +8,7 @@ import { EquitiesContext } from '../context'
 export default function EquitiesListOverview() {
 
   return (
-    <SafeAreaView class='equities-list' style={styles.mainContainer} >
+    <SafeAreaView style={styles.mainContainer} >
       <StocksOverview/>
       <EquitiesTable />
     </SafeAreaView>
