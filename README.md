@@ -54,6 +54,10 @@ In order to have a better approach for any developer on components re-utilizatio
 
 On mobile applications is easier to emulate OS routing as android having tab bottom tabs is easier to adapt to the application flow so In this app was implemented in that way, also having buttons making contrast from other ui html tags, the equities list was rendered in a scrollable tag to have that part of the aplication scrolling and the tab is always visible and accesible as well as other features.
 
+TO DO as personal challenge:
+
+I really wanted to highlight from other participants implementing a 3d Money GLB file using react drei and React three fiber but time run, in expo was leading to errors from some dependency yet not identified but I'm going to fix it for sure since I realized today, A pity due to the time I spent, The glb is in assets and I took one model from sketchfab.com and modified using blender and erasing some geometries and made the react component atom.
+
 
 3 - React native good practices
 
@@ -62,6 +66,7 @@ On mobile applications is easier to emulate OS routing as android having tab bot
 - The global state management protects excesive re-renders due to the usage of useEffect mutations and dependencies, also prop drilling call backs to mutate the state on nested tree components like buttons and having more controled event emmitters
 
 - cache was not implemented since there are none api requests and the compilation of the json dummy data is synchronous, but its an aspect to have on mind for a seach filter in higher demanding apps
+
 
 
 
