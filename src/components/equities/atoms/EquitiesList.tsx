@@ -1,13 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import { FlatList, ScrollView, StyleSheet } from "react-native"
 import { Equity } from "../../../types/equities"
 import EquitiesCard from "./EquitiesCard"
+import { EquitiesContext } from '../../../context/equities/EquitiesContext'
 
-interface EquitiesListProps {
-  equities: Equity[];
-}
-
-const EquitiesList = ({equities}: EquitiesListProps) => {
+const EquitiesList = () => {
+  
+  const {equities, filteredEquities} = useContext(EquitiesContext)
+	console.log("TCL: EquitiesList -> equities", equities)
+  
   return (
     <ScrollView 
         horizontal={false}
@@ -15,7 +16,7 @@ const EquitiesList = ({equities}: EquitiesListProps) => {
         contentContainerStyle={styles.scrollableContentContainer}
       >
         <FlatList
-          data={equities}
+          data={filteredEquities?.length?filteredEquities:equities}
           numColumns={1}
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item, index)=>String(index)}

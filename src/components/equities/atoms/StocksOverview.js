@@ -2,9 +2,11 @@ import { View, Text } from "react-native-web"
 import { hotUpdate } from "../../../utils/equities"
 import { StyleSheet } from "react-native"
 import { CustomText } from "../atoms/CustomText"
+import { EquitiesContext } from '../../../context/equities/EquitiesContext'
+import { useContext } from "react"
 
-const StocksOverview = ({equities}) => {
-
+const StocksOverview = () => {
+  const {equities} = useContext(EquitiesContext)
   const hotEquity = hotUpdate(equities)
   const { name, symbol, price, daily_change } = hotEquity
   return (

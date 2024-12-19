@@ -15,15 +15,11 @@ const filters : FilterList = [
   },
 ]
 
-export interface EquitiesTableProps {
-  equities: Equity[];
-}
-
-export default function EquitiesTable({equities}: EquitiesTableProps) {
+export default function EquitiesTable() {
   return (
     <View style={styles.mainContainer}>
       <FilterTagsList filterList={filters} />
-      <EquitiesList equities={equities} />
+      <EquitiesList/>
     </View>
   )
 }
