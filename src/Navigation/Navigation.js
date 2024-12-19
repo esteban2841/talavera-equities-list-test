@@ -7,8 +7,6 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 const Tab = createBottomTabNavigator();
 
-// const Stack = createStackNavigator();
-
 export default function Navigation() {
   return (
     <Tab.Navigator
@@ -29,14 +27,3 @@ export default function Navigation() {
     </Tab.Navigator>
   )
 }
-
-
-    // <Stack.Navigator>
-    //   <Stack.Screen name='Equities List' component={EquitiesNavigation}/>
-    // </Stack.Navigator>
-    // <Tab.Navigator>
-    //   <Tab.Screen name='Favorite' component={FavoriteNavigation}
-    //   options={{
-    //     tabBarLabel:"My favorites",
-    //     tabBarIcon: ({color, size})=> <Icon name="heart" color={color} size={size}/>
-        
