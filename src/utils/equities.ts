@@ -1,5 +1,5 @@
 import { Equities, Equity } from "../types/equities"
-import _ from 'lodash'
+import _, { eq, random } from 'lodash'
 
 const totalStockAsset = (equities: Equities) : number => {
     return equities.reduce((acc: number, equity: Equity) => {
@@ -15,14 +15,25 @@ const hotUpdate = (equities: Equities): Equity => {
 }
 
 const sorting = (equities: Equities, prop: string): Equities => {
-	console.log("TCL: equities", equities)
     const ordered = _.sortBy(equities, [prop]);
-    console.log("TCL: ordered", ordered)
     return ordered
+}
+
+const calcYesterdayEquityPrice = (equity: Equity): Equities => {
+    const increaseValue = (equity?.daily_change / 100) * equity?.price
+    const yesterdayEquityPrice = equity?.price - increaseValue 
+    const yersterdayEquityValues = {
+        ...equity,
+        price: yesterdayEquityPrice,
+        daily_change: random(-10, 10)
+    }
+	console.log("TCL: [yersterdayEquityValues, equity]", [yersterdayEquityValues, equity])
+    return [yersterdayEquityValues, equity]
 }
 
 export {
     totalStockAsset,
     hotUpdate,
-    sorting
+    sorting,
+    calcYesterdayEquityPrice
 }

@@ -3,13 +3,14 @@ import { EquitiesContext } from './EquitiesContext';
 import { EquitiesReducer } from './EquitiesReducer';
 import DATAJSON from '../../../dummy_stock_data.json'
 import { Equity } from '../../types/equities';
-import { sorting } from '../../utils/equities';
+import { calcYesterdayEquityPrice, sorting } from '../../utils/equities';
 
 const {stocks} = DATAJSON
 
 const INITIAL_STATE: EquitiesContext = {
     equities: [...stocks],
     filteredEquities: [],
+    equityChanges: [],
 }
 
 interface Props {
@@ -21,17 +22,20 @@ export const EquitiesProvider = ({children}: Props) => {
     const [state, dispatch] = useReducer(EquitiesReducer, INITIAL_STATE)
     
     const sortEquitiesAsc = (payload: Equity[]) =>{
-		console.log("TCL: sortEquitiesAsc -> payload", payload)
         const sortedEquities = sorting([...payload], 'name')
-		console.log("TCL: sortEquitiesAsc -> sortedEquities", sortedEquities)
         dispatch({type:'sortEquitiesAsc', payload: sortedEquities})
+    }
+    const setEquityChanges = (payload: Equity) =>{
+        const equityChanges = calcYesterdayEquityPrice(payload)
+        dispatch({type:'setEquityChanges', payload: equityChanges})
     }
 
 
     return (
         <EquitiesContext.Provider value={{
             ...state,
-            sortEquitiesAsc
+            sortEquitiesAsc,
+            setEquityChanges
         }}>
             {children}
         </EquitiesContext.Provider>

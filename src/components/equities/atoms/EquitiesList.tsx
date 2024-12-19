@@ -7,7 +7,6 @@ import { EquitiesContext } from '../../../context/equities/EquitiesContext'
 const EquitiesList = () => {
   
   const {equities, filteredEquities} = useContext(EquitiesContext)
-	console.log("TCL: EquitiesList -> equities", equities)
   
   return (
     <ScrollView 

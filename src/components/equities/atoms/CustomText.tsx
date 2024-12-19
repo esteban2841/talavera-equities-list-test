@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
       opacity: 0.9,
       fontSize: 14,
       marginRight: 10,
-      paddingTop: 20,
       fontFamily: 'Poppins, sans-serif',
       fontWeight: '400',
       fontStyle: 'normal',

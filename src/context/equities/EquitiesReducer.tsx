@@ -7,6 +7,11 @@ export const EquitiesReducer = (state: EquitiesContext, action: any) : EquitiesC
                 ...state,
                 filteredEquities: action.payload
             }
+        case 'setEquityChanges':
+            return {
+                ...state,
+                equityChanges: action.payload
+            }
         default:
             return state
     } 
