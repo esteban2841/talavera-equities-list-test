@@ -1,6 +1,4 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
 import EquitiesNavigation from './EquitiesNavigation';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import Entypo from '@expo/vector-icons/Entypo';
