@@ -4,26 +4,37 @@ import { createStackNavigator } from '@react-navigation/stack';
 import EquitiesNavigation from './EquitiesNavigation';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import Entypo from '@expo/vector-icons/Entypo';
+import Home from '../Screens/Home';
+import { EquitiesProvider } from '../context';
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <Tab.Navigator
-      screenOptions={
-        {
-          tabBarStyle:{
-            backgroundColor: 'rgb(47,47,47)',
+    <EquitiesProvider>
+
+      <Tab.Navigator
+        screenOptions={
+          {
+            tabBarStyle:{
+              backgroundColor: 'rgb(47,47,47)',
+            }
           }
         }
-      }
-    >
-      <Tab.Screen name='Equities List' component={EquitiesNavigation}
-        options={{
-          tabBarBadgeStyle: {backgroundColor: 'rgb(47,47,47)'},
-          tabBarIcon: ()=> <Entypo name="home" size={24} color="'rgb(220,12,6)'" />
-        }}
-      />
-    </Tab.Navigator>
+      >
+        {/* <Tab.Screen name='Home' component={Home}
+          options={{
+            tabBarBadgeStyle: {backgroundColor: 'rgb(47,47,47)'},
+            tabBarIcon: ()=> <Entypo name="home" size={24} color="'rgb(220,12,6)'" />
+          }}
+        /> */}
+        <Tab.Screen name='Equities List' component={EquitiesNavigation}
+          options={{
+            tabBarBadgeStyle: {backgroundColor: 'rgb(47,47,47)'},
+            tabBarIcon: ()=> <Entypo name="home" size={24} color="'rgb(220,12,6)'" />
+          }}
+        />
+      </Tab.Navigator>
+    </EquitiesProvider>
   )
 }
