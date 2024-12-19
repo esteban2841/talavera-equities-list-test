@@ -13,7 +13,17 @@ const hotUpdate = (equities: Equities): Equity => {
     return ordered[0]
 }
 
+const sorting = (equities: Equities): Equities => {
+	console.log("TCL: equities", equities)
+    const ordered = [...equities].sort((a, b) => {
+        return b.name - a.name
+    })
+    console.log("TCL: ordered", ordered)
+    return ordered
+}
+
 export {
     totalStockAsset,
-    hotUpdate
+    hotUpdate,
+    sorting
 }

@@ -6,7 +6,7 @@ import Navigation from './src/Navigation/Navigation';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer styles={styles.container}>
       <Navigation/>
     </NavigationContainer>
   );

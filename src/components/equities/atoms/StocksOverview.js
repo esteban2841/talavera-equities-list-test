@@ -36,13 +36,14 @@ export default StocksOverview
 
 const styles = StyleSheet.create({
   mainContainer:{
-    flex: 1,
     boxSize: "border-box",
     paddingHorizontal: 50,
     paddingVertical: 20,
+    marginVertical: 20,
+    flex: 1,
+    
   },
   hotStockContainer:{
-    height: 160,
     backgroundColor: 'rgb(47, 47, 47)',
     width: '100%',
     padding: 10,
