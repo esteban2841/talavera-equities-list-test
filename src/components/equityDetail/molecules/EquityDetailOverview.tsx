@@ -13,7 +13,9 @@ const EquityDetailOverview = () => {
 
   return (
     <View style={styles.container}>
-      {/* <EquityChangeChart equityChanges={equityChanges} /> */}
+      {/* <EquityChangeChart equityChanges={equityChanges} />
+        still to identify what the error is in regards of EXPO --> context and hook calls because I'm not using context inside
+      */}
       <IconRendering style={styles.icon} equitySelected={equitySelected} />
       <View style={styles.infoContainer}>
         <View style={styles.propContainer}>

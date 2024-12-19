@@ -19,7 +19,7 @@ const EquitiesList = () => {
           numColumns={1}
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item, index)=>String(index)}
-          renderItem={({item, index})=> <EquitiesCard equity={item} ind={index} />}
+          renderItem={({item})=> <EquitiesCard equity={item} />}
           contentContainerStyle={styles.flatListContentContainer}
         
         />

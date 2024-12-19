@@ -8,10 +8,9 @@ import { EquitiesContext } from '../../../context'
 
 export interface EquityCardProps{
   equity: Equity
-  ind: number
 }
 
-export default function EquitiesCard({equity, ind}: EquityCardProps) {
+export default function EquitiesCard({equity}: EquityCardProps) {
   const { setEquityChanges } = useContext(EquitiesContext)
   const navigation = useNavigation()
     const goToCharacter = (equitySelected: Equity)=>{

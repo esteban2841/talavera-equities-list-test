@@ -25,9 +25,9 @@ export function FilterEquitiesButton({
         ...(type === 'primary' ? [styles.primary] : []),
       ]}
       {...rest}
-      onPress={()=>sortEquitiesAsc(equities)}
+      onPress={()=>(sortEquitiesAsc && sortEquitiesAsc(equities))}
     >
-      <CustomText type='default'>{content}</CustomText>
+      <CustomText type='title'>{content}</CustomText>
     </TouchableOpacity>
   );
 }
@@ -35,8 +35,9 @@ export function FilterEquitiesButton({
 const styles = StyleSheet.create({
   primary: {
     flex: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 2,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginBottom: 8,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 16,
