@@ -18,6 +18,7 @@ export default function EquitiesNavigation() {
         <Stack.Screen name='Equity detail' component={EquityDetailOverview} options={ {title: "", headerTransparent: true} } style={{
           width : '100%',
           height : '100%',
+          
         }} />
       </Stack.Navigator>
     </EquitiesProvider>

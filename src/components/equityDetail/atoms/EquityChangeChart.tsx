@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import { EquitiesContext } from '../../../context/equities/EquitiesContext';
 import { LineChart } from 'react-native-chart-kit';
 
 
-export const EquityChangeChart = () => {
-  const {equityChanges} = useContext(EquitiesContext)
+export const EquityChangeChart = ({equityChanges}: any) => {
   const labelsNames = ['Yesterday', 'Today'];
   const dataEquity = equityChanges?.map((item, index)=>{return item.price}) || []
   
