@@ -46,20 +46,31 @@ const domoPerro = [
     },
 ]
 
-const calcTotalWoodLength = (array) =>{
+const calcTotalWoodLength = (array, comercialWoodlength) =>{
     const totalLength = array.reduce((acc, woodPieceCat)=>{
         console.log(acc, woodPieceCat)
         const calc = (woodPieceCat.baseLength * woodPieceCat.quantity)
         return acc + calc
     }, 0)
     console.log("TCL: calcTotalWoodLength -> totalLength", totalLength)
-    return totalLength 
+    const comercialWoodPieces = totalLength / comercialWoodlength
+	console.log("TCL: calcTotalWoodLength -> comercialWoodPieces", comercialWoodPieces)
+    return comercialWoodPieces
 
 }
 
 
-const comercialWoodlength = ['3,20m', '3,96m']
+const comercialWoodlength = [3200, 3960]
 
 
-constole.log((calcTotalWoodLength(domoPerro)) / 3960)
 
+const calcUniCategories = (array) =>{
+	console.log("TCL: calcUniCategories -> array", array)
+    
+    const setOfPiecesUnique = [...new Set(array)];
+	console.log("TCL: calcUniCategories -> setOfPiecesUnique", setOfPiecesUnique)
+    return setOfPiecesUnique
+}
+
+
+console.log('calc domo pieces', calcTotalWoodLength(domoPerro, comercialWoodlength[0]))
